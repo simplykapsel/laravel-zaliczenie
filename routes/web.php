@@ -12,9 +12,29 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Stary index
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('start');
+});
+
+Route::get('/oferta', function () {
+    return view('oferta');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::get('/o_nas', function () {
+    return view('o_nas');
+});
+
+Route::get('/kontakt', function () {
+    return view('kontakt');
 });
 
 Auth::routes();
