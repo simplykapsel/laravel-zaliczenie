@@ -15,7 +15,7 @@
                     @endif
 
                     {{ __('Zalogowany!') }}
-                    Witaj na stronie!<br>
+                    Witaj na stronie użytkownika!<br>
                         Rola: {{Auth::user()->role}}
                 </div>
             </div>

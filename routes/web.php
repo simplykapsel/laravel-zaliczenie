@@ -43,14 +43,22 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('user', function(){
-    return 'User';
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('admin', [AdminController::class, "index"])->name('admin');
 });
 
-Route::get('admin', function(){
-    return 'Admin';
+Route::group(['middleware' => ['user']], function () {
+    Route::get('user', [UserController::class, "index"])->name('user');
 });
 
-Route::get('user', [UserController::class, "index"])->name('user');
-Route::get('admin', [UserController::class, "index"])->name('admin');
+//Route::get('user', function(){
+//    return 'User';
+//});
+//
+//Route::get('admin', function(){
+//    return 'Admin';
+//});
+
+
+
 
