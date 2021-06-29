@@ -149,4 +149,14 @@
             margin-top: 7rem;
         }
     }
+    /* NAPRAWA KARUZELI
+    ----------------------------------------------------------
+     */
+    .carousel .carousel-inner img {
+        width: 100%;
+        height: 30em;
+        object-fit: cover;
+        overflow: hidden;
+        filter: brightness(50%);
+    }
 </style>

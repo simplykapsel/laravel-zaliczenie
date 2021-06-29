@@ -1,9 +1,9 @@
 <footer class="text-muted py-5">
     <div class="container">
         <p class="float-end mb-1">
-            <a href="#">Back to top</a>
+            <a class="btn btn-warning" href="#">↑</a>
         </p>
-        <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+        <p class="mb-1">Strona wykonana przez Bartłomieja Wiśniewskiego i Patryka Kaczmarka </p>
+        <p class="mb-0">Użyto technologii © Bootstrap. <a href="https://getbootstrap.com">Zajrzyj na ich stronę</a> </p>
     </div>
 </footer>

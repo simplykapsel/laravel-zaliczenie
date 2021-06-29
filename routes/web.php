@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +42,15 @@ Route::get('/kontakt', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('user', function(){
+    return 'User';
+});
+
+Route::get('admin', function(){
+    return 'Admin';
+});
+
+Route::get('user', [UserController::class, "index"])->name('user');
+Route::get('admin', [UserController::class, "index"])->name('admin');
+
