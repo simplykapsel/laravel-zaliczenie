@@ -12,4 +12,10 @@ class AdminController extends Controller
         $select = DB::select('select * from users');
         return view ('homeAdmin')->with('name',$select);
     }
+
+//    public function create(Request $request){
+//        $car = new Car($request->all());
+//        $car->save();
+//        redirect('admin');
+//    }
 }

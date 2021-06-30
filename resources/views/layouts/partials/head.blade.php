@@ -159,4 +159,10 @@
         overflow: hidden;
         filter: brightness(50%);
     }
+
+    table, tr, th, td{
+        border: solid 1px grey;
+        padding: 10px;
+        text-align: center;
+    }
 </style>
