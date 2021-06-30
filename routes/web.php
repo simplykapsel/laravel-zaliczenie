@@ -51,13 +51,27 @@ Route::group(['middleware' => ['user']], function () {
     Route::get('user', [UserController::class, "index"])->name('user');
 });
 
-//Route::get('user', function(){
-//    return 'User';
-//});
-//
-//Route::get('admin', function(){
-//    return 'Admin';
-//});
+Route::get('/createUser', function () {
+    return view('users.createUser');
+});
+
+Route::get('/createCar', function () {
+    return view('cars.createCar');
+});
+
+Route::get('/editCar', function () {
+    return view('cars.editCar');
+});
+
+Route::get('/editUser', function () {
+    return view('users.editUser');
+});
+
+Route::post('/createUser', [App\Http\Controllers\UserController::class, 'createUser'])->name('createUser');
+Route::put('/editUser', [App\Http\Controllers\UserController::class, 'editUser'])->name('editUser');
+
+Route::post('/createCar', [App\Http\Controllers\CarController::class, 'createCar'])->name('createCar');
+
 
 
 

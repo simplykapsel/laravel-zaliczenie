@@ -13,4 +13,9 @@ class UserController extends Controller
         $users = User::all();
         return view ('homeAdmin')->with(['users' => $users]);
     }
+    public function createUser(Request $request){
+        $user = new User($request->all());
+        $user->save();
+        return redirect(route('admin'));
+    }
 }
