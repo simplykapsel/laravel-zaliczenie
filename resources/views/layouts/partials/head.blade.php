@@ -6,7 +6,7 @@
 <title>Album example · Bootstrap v5.0</title>
 
 <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 <!-- Bootstrap core CSS -->
@@ -158,11 +158,5 @@
         object-fit: cover;
         overflow: hidden;
         filter: brightness(50%);
-    }
-
-    table, tr, th, td{
-        border: solid 1px grey;
-        padding: 10px;
-        text-align: center;
     }
 </style>

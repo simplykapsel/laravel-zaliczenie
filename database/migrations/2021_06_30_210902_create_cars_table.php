@@ -24,6 +24,7 @@ class CreateCarsTable extends Migration
             $table->string('skrzynia');
             $table->string('naped');
             $table->integer('miejsca');
+            $table->string('file_path');
             $table->timestamps();
         });
     }

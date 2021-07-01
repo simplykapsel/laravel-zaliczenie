@@ -6,7 +6,7 @@ use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminController extends Controller
+class DefaultController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class AdminController extends Controller
         //
         $cars = Car::where('user_id',Auth::user()->id)->get();
 
-        return view('homeAdmin', compact('cars'));
+        return view ('homeUser', compact('cars'));
     }
 
     /**
