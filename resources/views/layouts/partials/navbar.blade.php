@@ -9,7 +9,6 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="{{ url('/') }}" class="nav-link px-2 text-secondary">Strona główna</a></li>
                 <li><a href="{{ url('/oferta') }}" class="nav-link px-2 text-white">Oferta</a></li>
-                {{--                <li><a href="{{ url('/kontakt') }}" class="nav-link px-2 text-white">Kontakt</a></li>--}}
                 <li><a href="{{ url('/faq') }}" class="nav-link px-2 text-white">FAQ</a></li>
                 <li><a href="{{ url('/o_nas') }}" class="nav-link px-2 text-white">O nas</a></li>
             </ul>

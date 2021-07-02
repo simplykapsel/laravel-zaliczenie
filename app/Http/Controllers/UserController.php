@@ -124,7 +124,7 @@ class UserController extends Controller
     {
         //Usunięcie usera
         $user->delete();
-
-        return redirect()->route('users.index')->with('Sukces','Użytkownik usnięty poprawnie');
+        //Powrót do spisu userów
+        return redirect()->route('users.index')->with('Sukces','Użytkownik usunięty poprawnie');
     }
 }
