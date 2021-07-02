@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12 p-5">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -14,16 +14,15 @@
                         </div>
                     @endif
 
-                    {{ __('Zalogowany!') }}
-                    Witaj na stronie użytkownika!<br>
-                        Rola: {{Auth::user()->role}}
-
+                    {{ __('Zalogowany poprawnie!') }}<br>
+                        Witaj <b>{{Auth::user()->name}} {{Auth::user()->surname}}</b> na twoim profilu!<br>
+                        <p>
+                        <h3>Lista aut należacych do Ciebie:</h3>
+                        </p>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead class="thead-dark">
                                 <tr>
-                                    <th>ID Auta</th>
-                                    <th>ID Użytkownika</th>
                                     <th>Marka</th>
                                     <th>Model</th>
                                     <th>Rok</th>
@@ -32,13 +31,12 @@
                                     <th>Rodzaj skrzynia</th>
                                     <th>Rodzaj napędu</th>
                                     <th>Ilość miejsc</th>
-                                    <th>Akcje</th>
+                                    <th>Zdjęcie poglądowe</th>
+                                    <th>Zwrót auta</th>
                                 </tr>
                                 </thead>
                                 @foreach ($cars as $car)
                                     <tr>
-                                        <td>{{ $car->id }}</td>
-                                        <td>{{ $car->user_id }}</td>
                                         <td>{{ $car->marka }}</td>
                                         <td>{{ $car->model }}</td>
                                         <td>{{ $car->rok }}</td>
@@ -47,14 +45,13 @@
                                         <td>{{ $car->skrzynia }}</td>
                                         <td>{{ $car->naped }}</td>
                                         <td>{{ $car->miejsca }}</td>
+                                        <td><img width="100%" height="auto"
+                                                 src="{{ asset('uploads/addedCars/'.$car->file_path) }}"></td>
                                         <td>
-                                            <a class="btn btn-info" href="{{ route('cars.show',$car->id) }}"><i
-                                                    class="fa fa-eye"></i></a>
-                                            <a class="btn btn-warning" href="{{ route('cars.edit',$car->id) }}"><i
-                                                    class="fa fa-pencil"></i></a>
-                                            <form class="d-inline" action="{{ route('cars.destroy',$car->id) }}" method="POST">
+                                            <form class="d-inline" action="{{ route('returnCar',$car->id) }}" method="POST">
                                                 @csrf
-                                                @method('DELETE')
+                                                <input type="hidden" name="id" id="id" value="{{$car->id}}">
+                                                <input type="hidden" name="user_id" id="user_id">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>

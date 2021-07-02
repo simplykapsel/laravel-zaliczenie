@@ -8,11 +8,11 @@
                 <div class="pull-left p-3">
                     <h2>Zarządzaj użytkownikami</h2>
                 </div>
-                <div class="pull-left p-3">
-                    <a class="btn btn-success" href="{{ route('admin') }}">Powrót</a>
-                </div>
                 <div class="pull-right p-3">
                     <a class="btn btn-success" href="{{ route('users.create') }}">Stwórz nowego użytkownika</a>
+                </div>
+                <div class="pull-right p-3">
+                    <a class="btn btn-success" href="{{ route('admin') }}">Powrót</a>
                 </div>
             </div>
         </div>

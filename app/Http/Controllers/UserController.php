@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        //Wyświetlanie wszystkich userów
         $users = User::all();
 
         return view('users.index', compact('users'));
@@ -28,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        //Przenoszenie na okno tworzenia usera
         return view('users.create');
     }
 
@@ -40,7 +40,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Walidacja usera
         $request->validate([
             'name' => ['required', 'max:60'],
             'surname' => ['required', 'max:60'],
@@ -49,14 +49,15 @@ class UserController extends Controller
             'role' => ['required'],
         ]);
 
-
+        //Tworzenie usera
         User::create([
             'name' => $request->name,
             'surname' => $request->surname,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => $request->role
         ]);
-
+        //Powrót do spisu
         return redirect()->route('users.index')->with('success','Użytkownik utworzony pomyślnie.');
     }
 
@@ -68,7 +69,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        //Wyświetlanie wszystkich danych usera w osobnym view
         return view('users.show',compact('user'));
     }
 
@@ -80,7 +81,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        //Wyświetlanie widoku edycji
         return view('users.edit',compact('user'));
     }
 
@@ -93,7 +94,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        //Walidacja aktualizowanych danych usera
         $request->validate([
             'name' => ['required', 'max:60'],
             'surname' => ['required', 'max:60'],
@@ -101,10 +102,16 @@ class UserController extends Controller
             'password' => ['required', 'min:8'],
             'role' => ['required'],
         ]);
-
-        $user->update($request->all());
-
-        return redirect()->route('users.index')->with('Sukces','Użytkownik zaktualziowany poprawnie');
+        //Aktualizacja danych
+        $user->update([
+            'name' => $request->name,
+            'surname' => $request->surname,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => $request->role
+        ]);
+        //Powrót do spisu wszystkich userów
+        return redirect()->route('users.index')->with('Sukces','Użytkownik zaktualizowany poprawnie');
     }
 
     /**
@@ -115,7 +122,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        //Usunięcie usera
         $user->delete();
 
         return redirect()->route('users.index')->with('Sukces','Użytkownik usnięty poprawnie');

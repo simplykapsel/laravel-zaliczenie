@@ -50,7 +50,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Hasło:</strong>
-                <input type="password" class="form-control" name="password" placeholder="Hasło" required autocomplete="password" autofocus>
+                <input type="password" class="form-control" name="password" value="" placeholder="Hasło" required autocomplete="password" autofocus>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

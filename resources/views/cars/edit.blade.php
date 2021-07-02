@@ -23,7 +23,7 @@
             </div>
         @endif
 
-        <form action="{{ route('cars.update',$car->id) }}" method="POST">
+        <form action="{{ route('cars.update',$car->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             @method('PUT')
@@ -112,6 +112,14 @@
                         <strong>Miejsca:</strong>
                         <input type="number" class="form-control" name="miejsca" value="{{$car->miejsca}}"
                                placeholder="Ilość miejsc">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Zdjęcie:</strong>
+                        <input type="file" class="form-control" id="file_path" name="file_path" placeholder="Zdjecie auta" required>
+                        <img class="rounded mx-auto d-block" src="{{ asset('/uploads/addedCars/'.$car->file_path) }}" width="25%" height="25%">
                     </div>
                 </div>
 

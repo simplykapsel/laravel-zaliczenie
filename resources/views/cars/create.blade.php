@@ -104,14 +104,14 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Miejsca:</strong>
-                        <input type="number" class="form-control" name="miejsca" placeholder="Ilość miejsc">
+                        <input type="number" class="form-control" id="miejsca" name="miejsca" placeholder="Ilość miejsc">
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Zdjęcie:</strong>
-                        <input type="file" class="form-control" name="file" placeholder="Zdjecie auta" required>
+                        <input type="file" class="form-control" id="file_path" name="file_path" placeholder="Zdjecie auta" required>
                     </div>
                 </div>
 

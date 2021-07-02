@@ -40,7 +40,7 @@
 <div class="form-signin">
     <form method="POST" action="{{ route('login') }}">
         @csrf
-        <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <img class="mb-4" src="{{asset("/assets/blue.png")}}" alt="" width="50%" height="50%">
         <h1 class="h3 mb-3 fw-normal">Panel logowania</h1>
 
         <div class="form-floating">

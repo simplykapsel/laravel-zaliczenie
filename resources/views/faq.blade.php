@@ -24,24 +24,35 @@
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Accordion Item #2</button></h3>
-                            <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Czy są ograniczenia na wynajmowanie aut?
+                                </button>
+                            </h3>
+                            <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo"
+                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <strong>This is the second item's accordion body.</strong>
-                                    It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                                    <code>.accordion-body</code>
-                                    , though the transition does limit overflow.
+                                    <strong>Od zawsze powtarzamy</strong> <i> „Klient nasz pan”</i><br>
+                                    Na naszej stronie nie ma żadnych ograniczeń oraz kruczków<br/>
+                                    Jedynym ograniczeniem jest zasobność naszej floty.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Accordion Item #3</button></h3>
-                            <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">Gdzie mogę zwrócić pojazd?
+                                </button>
+                            </h3>
+                            <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree"
+                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <strong>This is the third item's accordion body.</strong>
-                                    It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                                    <code>.accordion-body</code>
-                                    , though the transition does limit overflow.
+                                    <strong>To bardzo proste...</strong><br>
+                                    Aby zwrócić auto wystarczy wejść na swój profil i na liście aktualnie posiadanych
+                                    aut kliknąc przycisk zwrotu pojazdu. Wtedy wszystko automatycznie zostanie wykonane
+                                    po naszej stronie.
                                 </div>
                             </div>
                         </div>
@@ -79,27 +90,6 @@
                                     It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
                                     <code>.accordion-body</code>
                                     , though the transition does limit overflow.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="card border-0 bg-light mt-xl-5">
-                        <div class="card-body p-4 py-lg-5">
-                            <div class="d-flex align-items-center justify-content-center">
-                                <div class="text-center">
-                                    <div class="h6 fw-bolder">Have more questions?</div>
-                                    <p class="text-muted mb-4">
-                                        Contact us at
-                                        <br />
-                                        <a href="#!">support@domain.com</a>
-                                    </p>
-                                    <div class="h6 fw-bolder">Follow us</div>
-                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
-                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
-                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
-                                    <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
                                 </div>
                             </div>
                         </div>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Car;
+use Illuminate\Support\Facades\File;
 
 class CarController extends Controller
 {
@@ -50,34 +52,27 @@ class CarController extends Controller
             'skrzynia' => ['required', 'max:60'],
             'naped' => ['required', 'max:60'],
             'miejsca' => ['numeric', 'max:60'],
-
         ]);
-//        Car::create($request->all());
-
-        // Sprawdzenie czy plik został dodany zanim dodawanie się rozpocznie
-        if ($request->hasFile('file')) {
-
-            $request->validate([
-                'image' => 'mimes:jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
-            ]);
-
-            // Save the file locally in the storage/public/ folder under a new folder named /product
-            $request->file->store('addedCars', 'public');
-
-            // Store the record, using the new file hashname which will be it's new filename identity.
-            Car::create([
-                "user_id" => $request->get('user_id'),
-                "marka" => $request->get('marka'),
-                "model" => $request->get('model'),
-                "rok" => $request->get('rok'),
-                "moc" => $request->get('moc'),
-                "rodzaj" => $request->get('rodzaj'),
-                "skrzynia" => $request->get('skrzynia'),
-                "naped" => $request->get('naped'),
-                "miejsca" => $request->get('miejsca'),
-                "file_path" => $request->file->hashName()
-            ]);
+        //Tworzenie nowego auta
+        $car = new Car;
+        $car->user_id=$request->input('user_id');
+        $car->marka=$request->input('marka');
+        $car->model=$request->input('model');
+        $car->rok=$request->input('rok');
+        $car->moc=$request->input('moc');
+        $car->rodzaj=$request->input('rodzaj');
+        $car->skrzynia=$request->input('skrzynia');
+        $car->naped=$request->input('naped');
+        $car->miejsca=$request->input('miejsca');
+        if($request->hasFile('file_path'))
+        {
+        $file = $request->file('file_path');
+        $extention = $file->GetClientOriginalExtension();
+        $filename=time().'.'.$extention;
+        $file->move('uploads/addedCars', $filename);
+        $car->file_path=$filename;
         }
+        $car->save();
 
         return redirect()->route('cars.index')->with('success','Auto utworzone pomyślnie.');
     }
@@ -106,16 +101,9 @@ class CarController extends Controller
         return view('cars.edit',compact('car'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Car  $car
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Car $car)
+    public function update(Request $request, $id)
     {
-        //
+        //walidacja auta
         $request->validate([
             'user_id' => 'nullable',
             'marka' => ['required', 'max:60'],
@@ -128,8 +116,32 @@ class CarController extends Controller
             'miejsca' => ['numeric', 'max:60'],
 
         ]);
-
-        $car->update($request->all());
+        //aktualizacja auta
+        $car = Car::find($id);
+        $car->user_id=$request->input('user_id');
+        $car->marka=$request->input('marka');
+        $car->model=$request->input('model');
+        $car->rok=$request->input('rok');
+        $car->moc=$request->input('moc');
+        $car->rodzaj=$request->input('rodzaj');
+        $car->skrzynia=$request->input('skrzynia');
+        $car->naped=$request->input('naped');
+        $car->miejsca=$request->input('miejsca');
+        //sprawdzanie czy plik został wysłany oraz wysłanie go do odpowiedniego folderu
+        if($request->hasFile('file_path'))
+        {
+            $destination = 'uploads/addedCars'.$car->file_path;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $request->file('file_path');
+            $extention = $file->GetClientOriginalExtension();
+            $filename=time().'.'.$extention;
+            $file->move('uploads/addedCars', $filename);
+            $car->file_path=$filename;
+        }
+        $car->save();
 
         return redirect()->route('cars.index')->with('Sukces','Auto zaktualziowane poprawnie');
     }
@@ -140,9 +152,15 @@ class CarController extends Controller
      * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Car $car)
+    public function destroy($id)
     {
         //
+        $car = Car::find($id);
+        $destination = 'uploads/addedCars'.$car->file_path;
+        if(File::exists($destination))
+        {
+            File::delete($destination);
+        }
         $car->delete();
 
         return redirect()->route('cars.index')->with('Sukces','Auto usunięte poprawnie');

@@ -22,7 +22,7 @@ class Car extends Model
         'naped',
         'miejsca',
     ];
-
+//Relacja z tablea User
     public function owner()
     {
         return $this->belongsTo(User::class, 'user_id');

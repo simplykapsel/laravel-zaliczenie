@@ -16,19 +16,15 @@ use App\Http\Controllers\CarController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Stary index
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
-Route::get('/', function () {
-    return view('start');
-});
+//Routingi odpowiedzialne za wyświetlanie nowo dodanych aut
+Route::get('/', [App\Http\Controllers\StartPageController::class, 'index'])->name('start');
+Route::post('/',[App\Http\Controllers\StartPageController::class, 'update'])->name('startPost');
 
-Route::get('/oferta', function () {
-    return view('oferta');
-});
 
+Route::get('/oferta', [App\Http\Controllers\OfertyController::class, 'index'])->name('oferta');
+
+//Routingi odpowiedzialne za wyświetlanie stron
 Route::get('/faq', function () {
     return view('faq');
 });
@@ -41,20 +37,28 @@ Route::get('/kontakt', function () {
     return view('kontakt');
 });
 
+//Routingi odpowiedzialne za aktualizacje profilu
+Route::post('/editProfile', [App\Http\Controllers\EditProfileController::class, 'update'])->name('editProfileUpdate');
+Route::get('/editProfile', [App\Http\Controllers\EditProfileController::class, 'index'])->name('editProfile');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Routingi pod dashboard userów i adminów
 Route::group(['middleware' => ['admin']], function () {
     Route::get('admin', [AdminController::class, "index"])->name('admin');
+    Route::resource('cars', CarController::class);
+    Route::resource('users', UserController::class);
+    Route::post('/admin', [App\Http\Controllers\returnCarController::class, 'update'])->name('returnCar');
 });
 
 Route::group(['middleware' => ['user']], function () {
     Route::get('user', [DefaultController::class, "index"])->name('user');
+    Route::post('/user', [App\Http\Controllers\returnCarController::class, 'update'])->name('returnCar');
 });
 
-Route::resource('cars', CarController::class);
-Route::resource('users', UserController::class);
+
 
 
 
