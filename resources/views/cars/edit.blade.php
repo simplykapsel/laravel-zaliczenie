@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>Edit Post</h2>
+                    <h2>Edytuj auto</h2>
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('cars.index') }}">Powrót</a>
