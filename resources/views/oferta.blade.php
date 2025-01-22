@@ -45,15 +45,19 @@
                                                         Weź auto
                                                     </button>
                                                 </form>
-                                            @endauth
                                             @else
                                                 <button type="button" class="btn btn-sm btn-outline-secondary"
                                                         disabled>
-                                                    Weź auto
+                                                    Zarezerwowane
                                                 </button>
-                                            @endif
-
-                                    </div>
+                                            @endauth
+                                            @else
+                                            <button type="button" class="btn btn-sm btn-outline-secondary"
+                                                    disabled>
+                                                Zaloguj się, aby zarezerwować!
+                                            </button>
+                                           @endif
+                                    </div>  
                                 </div>
                             </div>
 

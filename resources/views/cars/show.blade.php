@@ -114,6 +114,13 @@
                                placeholder="Ilość miejsc" disabled>
                     </div>
                 </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Zdjęcie:</strong>
+                        <img class="rounded mx-auto d-block" src="{{ asset('/uploads/addedCars/'.$car->file_path) }}" width="100%" height="100%">
+                    </div>
+                </div>
             </div>
         </form>
     </div>

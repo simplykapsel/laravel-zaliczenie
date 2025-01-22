@@ -51,14 +51,7 @@
                     <div class="text-center">
                         <img class="img-fluid rounded-circle mb-4 px-4" src="../assets/kapselv2.png" alt="..." />
                         <h5 class="fw-bolder">Bartek Wiśniewski</h5>
-                        <div class="fst-italic text-muted">Student IT na CDV</div>
-                    </div>
-                </div>
-                <div class="col mb-5 mb-5 mb-xl-0">
-                    <div class="text-center">
-                        <img class="img-fluid rounded-circle mb-4 px-4" src="../assets/patryk.jpeg" alt="..." />
-                        <h5 class="fw-bolder">Patryk Kaczmarek</h5>
-                        <div class="fst-italic text-muted">Student IT na CDV</div>
+                        <div class="fst-italic text-muted">Student IT na Merito Gdańsk</div>
                     </div>
                 </div>
             </div>

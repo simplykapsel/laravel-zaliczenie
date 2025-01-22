@@ -119,7 +119,7 @@
                     <div class="form-group">
                         <strong>Zdjęcie:</strong>
                         <input type="file" class="form-control" id="file_path" name="file_path" placeholder="Zdjecie auta" required>
-                        <img class="rounded mx-auto d-block" src="{{ asset('/uploads/addedCars/'.$car->file_path) }}" width="25%" height="25%">
+                        <img class="rounded mx-auto d-block" src="{{ asset('/uploads/addedCars/'.$car->file_path) }}" width="100%" height="100%">
                     </div>
                 </div>
 

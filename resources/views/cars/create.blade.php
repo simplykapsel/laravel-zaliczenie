@@ -53,7 +53,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Rok:</strong>
-                        <input type="number" min="1900" max="2021" class="form-control" name="rok" placeholder="Rok"
+                        <input type="number" min="1900" max="2025" class="form-control" name="rok" placeholder="Rok"
                                required autocomplete="rok" autofocus>
                     </div>
                 </div>

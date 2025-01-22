@@ -25,8 +25,7 @@
                                     <strong>Jeślii nie możesz wypożyczyć auta to istnieją dwa możliwe odpowiedzi na to
                                         pytanie<br></strong>
                                     a)Nie jesteś zarejestrowany<br/>
-                                    b)Auto jest wypożyczone przez kogoś innego (Zapytaj znajomego czym to on czasem
-                                    jeździ :D)
+                                    b)Auto jest wypożyczone przez innego użytkownika
                                 </div>
                             </div>
                         </div>

@@ -17,8 +17,10 @@
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1>Wynajmij mnie!</h1>
-                            <p>Jeżeli chcesz przeżyć ze mną nie zapomniane chwile..</p>
+                            <p>Atrakcyjne ceny i nie tylko...</p>
+                            @guest
                             <p><a class="btn btn-lg btn-primary" href="/register">Kliknij tutaj!</a></p>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -58,6 +60,8 @@
 
         <div class="album py-5 bg-light">
             <div class="container">
+                <h1>Nasza rekomendacje</h1>
+                <p>Chcesz zapoznać się z naszą całą ofertą zapraszamy do zakładki Oferta</p>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     @foreach($cars as $car)
                         <div class="col">
@@ -90,16 +94,19 @@
                                                             Weź auto
                                                         </button>
                                                     </form>
-                                                @endauth
                                                 @else
                                                     <button type="button" class="btn btn-sm btn-outline-secondary"
                                                             disabled>
-                                                        Weź auto
+                                                        Zarezerwowane
                                                     </button>
-                                                @endif
-
+                                                @endauth
+                                                @else
+                                                <button type="button" class="btn btn-sm btn-outline-secondary"
+                                                        disabled>
+                                                    Zaloguj się, aby zarezerwować!
+                                                </button>
+                                            @endif
                                         </div>
-                                        <small class="text-muted">Tak</small>
                                     </div>
                                 </div>
                             </div>
